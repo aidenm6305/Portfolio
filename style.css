@@ -523,6 +523,25 @@ article .icon {
   margin-top: 4rem;
 }
 
+#projects .about-containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#projects .details-container {
+  flex: 0 1 420px;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+}
+
+#projects .article-container {
+  display: block;
+  width: 100%;
+}
+
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(25, 25, 25);
@@ -534,6 +553,14 @@ article .icon {
   height: 90%;
 }
 
+#projects .project-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
 .project-title {
   margin: 1rem;
   color: white;
@@ -542,6 +569,10 @@ article .icon {
 .project-btn {
   color: white;
   border-color: rgb(163, 163, 163);
+}
+
+#projects .btn-container {
+  margin-top: auto;
 }
 
 /* CONTACT */
