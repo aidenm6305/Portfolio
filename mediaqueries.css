@@ -86,4 +86,26 @@
   .project-grid {
     grid-template-columns: 1fr;
   }
+
+  .project-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-controls select {
+    width: 100%;
+  }
+
+  .project-search {
+    margin-left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .project-search input {
+    width: 100%;
+    min-width: 0;
+  }
 }

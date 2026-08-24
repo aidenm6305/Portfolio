@@ -164,47 +164,38 @@
       </section>
 
       <section id="projects">
-        <!-- <p class="section__text__p1">Browse My Favorites</p> -->
-        <!-- Carosoul of projects with descriptions and links to their respective pages or downloads. -->
         <h2 class="title">Projects</h2>
         <p class="section-desc">A group of all of my projects.</p>
 
+        <div class="project-controls">
+          <label for="project-sort">Sort by date</label>
+          <select id="project-sort" aria-label="Sort projects by date">
+            <option value="newest" selected>Newest to oldest</option>
+            <option value="oldest">Oldest to newest</option>
+          </select>
+
+          <label for="project-year">Year</label>
+          <select id="project-year" aria-label="Filter projects by year">
+            <option value="all" selected>All years</option>
+          </select>
+
+          <label for="project-favorite">Attribute</label>
+          <select id="project-favorite" aria-label="Filter projects by attribute">
+            <option value="all" selected>All projects</option>
+            <option value="favorite">Dev favorite only</option>
+          </select>
+
+          <div class="project-search">
+            <label for="project-search">Search</label>
+            <input id="project-search" type="search" placeholder="Search projects" aria-label="Search projects">
+          </div>
+        </div>
+
         <div class="experience-details-container section-stack">
           <div class="project-grid">
-            <div class="project-card">
-              <p>Feb 2026</p>
-              <img src="Assets/ProjectCovers/MasqueradePage.png" alt="Masquerade cover">
-              <h3 class="project-title">Masquerade</h3>
-              <p>A fast paced top down shooter with masked power ups and enemies.</p>
-              <small>Made in 48 hours for the Global Game Jam</small>
-              <div class="button-row"><a class="btn-primary" href="https://globalgamejam.org/games/2026/masquerade-6-1" target="_blank" rel="noreferrer">Game Jam Page</a></div>
-            </div>
-
-            <div class="project-card">
-              <p>Nov 2025</p>
-              <img src="Assets/ProjectCovers/MAZEIcon.png" alt="Flux cover">
-              <h3 class="project-title">Flux</h3>
-              <p>A 3D ever changing maze game.</p>
-              <small>Showcased at Midwest Developers Conference</small>
-              <div class="button-row"><a class="btn-primary" href="https://aidenm6305.itch.io/flux-prototype" target="_blank" rel="noreferrer">Download Prototype</a></div>
-            </div>
-
-            <div class="project-card">
-              <p>Nov 2024</p>
-              <img src="Assets/ProjectCovers/coverRedacted.png" alt="Redacted cover">
-              <h3 class="project-title">Redacted</h3>
-              <p>A memory game where you create your own alibi.</p>
-              <small>WULUG Game Jam Winner</small>
-              <div class="button-row">
-                <a class="btn-primary" href="https://github.com/ZaneWallace20/Game_Jam" target="_blank" rel="noreferrer">GitHub</a>
-                <a class="btn-outline" href="https://aidenm6305.itch.io/redacted" target="_blank" rel="noreferrer">Download</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-grid">
-            <div class="project-card">
+            <div class="project-card" data-date="2026-06-20" data-year="2026" data-favorite="true">
               <p>Jun 2026</p>
+              <span class="project-attribute">Dev favorite</span>
               <img src="Assets/ProjectCovers/Tanks.jpeg" alt="Bad Tanks cover">
               <h3 class="project-title">Bad Tanks</h3>
               <p>A 3D split screen tank battle game.</p>
@@ -215,33 +206,7 @@
               </div>
             </div>
 
-            <div class="project-card">
-              <p>Dec 2022</p>
-              <img src="Assets/ProjectCovers/rocket.PNG" alt="Galactic Trials cover">
-              <h3 class="project-title">Galactic Trials</h3>
-              <p>A 3D physics based space shuttle flight challenge.</p>
-              <small>First ever project</small>
-              <div class="button-row">
-                <a class="btn-primary" href="https://github.com/aidenm6305/Galactic-Trials" target="_blank" rel="noreferrer">GitHub</a>
-                <a class="btn-outline" href="https://aidenm6305.itch.io/galactic-trials" target="_blank" rel="noreferrer">Download</a>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <p>Jan 2025</p>
-              <img src="Assets/ProjectCovers/Temple.PNG" alt="Temple Trials cover">
-              <h3 class="project-title">Temple Trials</h3>
-              <p>A 3D puzzle game set in an ancient temple.</p>
-              <small>Made in 48 hours</small>
-              <div class="button-row">
-                <a class="btn-primary" href="https://github.com/aidenm6305/MicroJam-Ancient" target="_blank" rel="noreferrer">GitHub</a>
-                <a class="btn-outline" href="https://aidenm6305.itch.io/temple-trials" target="_blank" rel="noreferrer">Download</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-grid">
-            <div class="project-card">
+            <div class="project-card" data-date="2026-06-01" data-year="2026" data-favorite="false">
               <p>Jun 2026</p>
               <img src="Assets/ProjectCovers/f1GvaU.png" alt="Saboteurs Speedway cover">
               <h3 class="project-title">Saboteurs Speedway</h3>
@@ -252,7 +217,62 @@
                 <a class="btn-outline" href="https://aidenm6305.itch.io/saboteursspeedway" target="_blank" rel="noreferrer">Play</a>
               </div>
             </div>
-            
+
+            <div class="project-card" data-date="2026-02-01" data-year="2026" data-favorite="true">
+              <p>Feb 2026</p>
+              <span class="project-attribute">Dev favorite</span>
+              <img src="Assets/ProjectCovers/MasqueradePage.png" alt="Masquerade cover">
+              <h3 class="project-title">Masquerade</h3>
+              <p>A fast paced top down shooter with masked power ups and enemies.</p>
+              <small>Made in 48 hours for the Global Game Jam</small>
+              <div class="button-row"><a class="btn-primary" href="https://globalgamejam.org/games/2026/masquerade-6-1" target="_blank" rel="noreferrer">Game Jam Page</a></div>
+            </div>
+
+            <div class="project-card" data-date="2025-11-01" data-year="2025" data-favorite="true">
+              <p>Nov 2025</p>
+              <span class="project-attribute">Dev favorite</span>
+              <img src="Assets/ProjectCovers/MAZEIcon.png" alt="Flux cover">
+              <h3 class="project-title">Flux</h3>
+              <p>A 3D ever changing maze game.</p>
+              <small>Showcased at Midwest Developers Conference</small>
+              <div class="button-row"><a class="btn-primary" href="https://aidenm6305.itch.io/flux-prototype" target="_blank" rel="noreferrer">Download Prototype</a></div>
+            </div>
+
+            <div class="project-card" data-date="2025-01-01" data-year="2025" data-favorite="false">
+              <p>Jan 2025</p>
+              <img src="Assets/ProjectCovers/Temple.PNG" alt="Temple Trials cover">
+              <h3 class="project-title">Temple Trials</h3>
+              <p>A 3D puzzle game set in an ancient temple.</p>
+              <small>Made in 48 hours</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/aidenm6305/MicroJam-Ancient" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://aidenm6305.itch.io/temple-trials" target="_blank" rel="noreferrer">Download</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-date="2024-11-01" data-year="2024" data-favorite="false">
+              <p>Nov 2024</p>
+              <img src="Assets/ProjectCovers/coverRedacted.png" alt="Redacted cover">
+              <h3 class="project-title">Redacted</h3>
+              <p>A memory game where you create your own alibi.</p>
+              <small>WULUG Game Jam Winner</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/ZaneWallace20/Game_Jam" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://aidenm6305.itch.io/redacted" target="_blank" rel="noreferrer">Download</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-date="2022-12-01" data-year="2022" data-favorite="false">
+              <p>Dec 2022</p>
+              <img src="Assets/ProjectCovers/rocket.PNG" alt="Galactic Trials cover">
+              <h3 class="project-title">Galactic Trials</h3>
+              <p>A 3D physics based space shuttle flight challenge.</p>
+              <small>First ever project</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/aidenm6305/Galactic-Trials" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://aidenm6305.itch.io/galactic-trials" target="_blank" rel="noreferrer">Download</a>
+              </div>
+            </div>
           </div>
 
         </div>
