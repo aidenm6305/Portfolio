@@ -1,126 +1,99 @@
 function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open")
-    icon.classList.toggle("open")
+  const menu = document.querySelector('.menu-links');
+  const icon = document.querySelector('.hamburger-icon');
+
+  if (!menu || !icon) {
+    return;
+  }
+
+  menu.classList.toggle('open');
+  icon.classList.toggle('open');
 }
 
-// Featured Projects Carousel
-let currentSlide = 0;
-let autoRotateInterval;
+function getProjectCards() {
+  const projectGrid = document.querySelector('#projects .project-grid');
 
-function initCarousel() {
-    const showcaseItems = document.querySelectorAll('#showcase .details-container');
-    
-    if (showcaseItems.length === 0) return;
-    
-    // Position all slides initially
-    updateSlidePositions();
-    
-    // Create indicators
-    createIndicators(showcaseItems.length);
-    
-    // Start auto-rotation
-    startAutoRotate();
+  if (!projectGrid) {
+    return { projectGrid: null, cards: [] };
+  }
+
+  const cards = Array.from(projectGrid.querySelectorAll('.project-card'));
+  return { projectGrid, cards };
 }
 
-function updateSlidePositions() {
-    const showcaseItems = document.querySelectorAll('#showcase .details-container');
-    const total = showcaseItems.length;
-    
-    showcaseItems.forEach((item, index) => {
-        // Remove all position classes
-        item.classList.remove('prev', 'active', 'next');
-        
-        // Calculate position relative to current slide
-        let position = index - currentSlide;
-        
-        // Normalize position for circular behavior
-        if (position < -1) position = total + position;
-        if (position > 1) position = position - total;
-        
-        // Apply appropriate class
-        if (position === -1) {
-            item.classList.add('prev');
-        } else if (position === 0) {
-            item.classList.add('active');
-        } else if (position === 1) {
-            item.classList.add('next');
-        }
-        // Items further away remain hidden (no class)
-    });
+function populateYearFilter(cards, yearSelect) {
+  if (!yearSelect) {
+    return;
+  }
+
+  const years = [...new Set(cards.map((card) => card.dataset.year).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+
+  years.forEach((year) => {
+    const option = document.createElement('option');
+    option.value = year;
+    option.textContent = year;
+    yearSelect.appendChild(option);
+  });
 }
 
-function createIndicators(count) {
-    const navContainer = document.querySelector('.carousel-nav');
-    if (!navContainer) return;
-    
-    const indicatorsContainer = navContainer.querySelector('.carousel-indicators');
-    if (!indicatorsContainer) return;
-    
-    indicatorsContainer.innerHTML = '';
-    
-    for (let i = 0; i < count; i++) {
-        const indicator = document.createElement('div');
-        indicator.classList.add('indicator');
-        if (i === 0) indicator.classList.add('active');
-        indicator.addEventListener('click', () => goToSlide(i));
-        indicatorsContainer.appendChild(indicator);
-    }
+function applyProjectFiltersAndSort() {
+  const { projectGrid, cards } = getProjectCards();
+  const sortSelect = document.querySelector('#project-sort');
+  const yearSelect = document.querySelector('#project-year');
+  const favoriteSelect = document.querySelector('#project-favorite');
+  const searchInput = document.querySelector('#project-search');
+
+  if (!projectGrid || !sortSelect || !yearSelect || !favoriteSelect || !searchInput) {
+    return;
+  }
+
+  const order = sortSelect.value;
+  const year = yearSelect.value;
+  const favorite = favoriteSelect.value;
+  const searchTerm = searchInput.value.trim().toLowerCase();
+
+  const visibleCards = cards.filter((card) => {
+    const matchesYear = year === 'all' || card.dataset.year === year;
+    const matchesFavorite = favorite === 'all' || card.dataset.favorite === 'true';
+    const searchableText = card.textContent.toLowerCase();
+    const matchesSearch = !searchTerm || searchableText.includes(searchTerm);
+
+    return matchesYear && matchesFavorite && matchesSearch;
+  });
+
+  visibleCards.sort((a, b) => {
+    const aDate = new Date(a.dataset.date || '1970-01-01').getTime();
+    const bDate = new Date(b.dataset.date || '1970-01-01').getTime();
+
+    return order === 'oldest' ? aDate - bDate : bDate - aDate;
+  });
+
+  cards.forEach((card) => {
+    card.style.display = 'none';
+  });
+
+  visibleCards.forEach((card) => {
+    card.style.display = '';
+    projectGrid.appendChild(card);
+  });
 }
 
-function showSlide(index) {
-    const showcaseItems = document.querySelectorAll('#showcase .details-container');
-    const indicators = document.querySelectorAll('.indicator');
-    
-    if (showcaseItems.length === 0) return;
-    
-    // Wrap around
-    if (index >= showcaseItems.length) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = showcaseItems.length - 1;
-    } else {
-        currentSlide = index;
-    }
-    
-    // Update slide positions
-    updateSlidePositions();
-    
-    // Update indicators
-    indicators.forEach((indicator, i) => {
-        indicator.classList.remove('active');
-        if (i === currentSlide) {
-            indicator.classList.add('active');
-        }
-    });
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const { cards } = getProjectCards();
+  const sortSelect = document.querySelector('#project-sort');
+  const yearSelect = document.querySelector('#project-year');
+  const favoriteSelect = document.querySelector('#project-favorite');
+  const searchInput = document.querySelector('#project-search');
 
-function nextSlide() {
-    showSlide(currentSlide + 1);
-    resetAutoRotate();
-}
+  if (!sortSelect || !yearSelect || !favoriteSelect || !searchInput) {
+    return;
+  }
 
-function prevSlide() {
-    showSlide(currentSlide - 1);
-    resetAutoRotate();
-}
+  populateYearFilter(cards, yearSelect);
+  applyProjectFiltersAndSort();
 
-function goToSlide(index) {
-    showSlide(index);
-    resetAutoRotate();
-}
-
-function startAutoRotate() {
-    autoRotateInterval = setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000); // Rotate every 5 seconds
-}
-
-function resetAutoRotate() {
-    clearInterval(autoRotateInterval);
-    startAutoRotate();
-}
-
-// Initialize carousel when page loads
-document.addEventListener('DOMContentLoaded', initCarousel);
+  sortSelect.addEventListener('change', applyProjectFiltersAndSort);
+  yearSelect.addEventListener('change', applyProjectFiltersAndSort);
+  favoriteSelect.addEventListener('change', applyProjectFiltersAndSort);
+  searchInput.addEventListener('input', applyProjectFiltersAndSort);
+});

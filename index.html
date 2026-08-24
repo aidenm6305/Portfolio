@@ -1,414 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="website icon" type="png" href="Assets/Icons/portfolio-logo.png" />
-  </head>
-
-  <body>
-    <!-- ==================== NAVIGATION ==================== -->
-    <!-- Desktop Navigation -->
-    <nav id="desktop-nav">
-      <div class="logo">Aiden Morgan</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Mobile Navigation -->
-    <nav id="hamburger-nav">
-      <div class="logo">Aiden Morgan</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-
-    <!-- ==================== HERO/PROFILE SECTION ==================== -->
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="Assets/Portraits/Circle-About.png" alt="Aiden Morgan profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Aiden Morgan</h1>
-        <p class="section__text__p2">Programmer and Game Developer</p>
-
-        <!-- Call to Action Buttons -->
-        <div class="btn-container">
-          <button 
-            class="btn btn-color-2" 
-            onclick="window.open('Assets/Resumes/Resume 5-13-26.pdf')">
-            Download CV
-          </button>
-          <button 
-            class="btn btn-color-1" 
-            onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-
-        <!-- Social Media Links -->
-        <div id="socials-container">
-          <img
-            src="Assets/Icons/linkedin1.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="window.open('https://www.linkedin.com/in/aiden-morgan-496535281/', '_blank')"
-          />
-          <img
-            src="Assets/Icons/github1.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="window.open('https://github.com/aidenm6305', '_blank')"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== ABOUT SECTION ==================== -->
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-
-      <div class="section-container">
-        <!-- Profile Image -->
-        <div class="section__pic-container">
-          <img 
-            src="Assets/Portraits/editedprofile.jpg" 
-            alt="Profile picture" 
-            class="about-pic" />
-        </div>
-
-        <!-- About Details -->
-        <div class="about-details-container">
-          <!-- Info Cards -->
-          <div class="about-containers">
-            <!-- Experience Card -->
-            <div class="details-container">
-              <img src="Assets/Icons/experience1.png" alt="Experience icon" class="icon" />
-              <h3>Experience</h3>
-              <p>3+ years <br />Game Development/Programming</p>
-            </div>
-
-            <!-- Education Card -->
-            <div class="details-container">
-              <img src="Assets/Icons/education1.png" alt="Education icon" class="icon" />
-              <h3>Education</h3>
-              <p>B.Sc. Computer Science<br/>Certificate in Game Design</p>
-            </div>
-          </div>
-
-          <!-- Bio Text -->
-          <div class="text-container">
-            <p>
-              Hello! I'm Aiden, a Web developer & aspiring Game Developer.
-              Currently I build internal and external web solutions at Textron Aviation, 
-              but my sights are set on the world of cooperative gaming. 
-              I’m a CS major driven by a simple belief:<strong> games are better with friends</strong>. 
-              I’m looking to pivot my professional development experience into a career creating the systems that bring people together.
-            </p>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiden Morgan | Dev Portfolio</title>
+  <link rel="website icon" type="png" href="Assets/Icons/portfolio-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-block">
+        <a class="logo-title" href="#profile">Aiden Morgan</a>
+        <span class="logo-subtitle">Software and Game Developer</span>
       </div>
 
-      <!-- Scroll Arrow -->
-      <img 
-        src="Assets/Icons/arrow1.png" 
-        alt="Arrow icon" 
-        class="icon arrow" 
-        onclick="location.href='./#experience'" />
-    </section>
-
-    <!-- ==================== EXPERIENCE SECTION ==================== -->
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <!-- Frontend Skills -->
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <!-- Backend Skills -->
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>C++</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>C#</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Python</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>SQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>ASP.NET MVC</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Git</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <!-- Game Development Skills -->
-          <div class="details-container">
-            <h2 class="experience-sub-title">Game Development</h2>
-            <div class="article-container">
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Unity</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Unreal</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Godot</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Maya</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certificates Section -->
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Certificates</h2>
-            <!--Row 1-->
-            <div class="article-container"> 
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Udemy Unity 2D</h3>
-                  <a href="Assets/Certificates/Udemy2DCert.jpg" target="_blank">Certificate</a>
-                </div>
-              </article>
-
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Advanced C#</h3>
-                  <a href="Assets/Certificates/AdvancedCSharp.jpg" target="_blank">Certificate</a>
-                </div>
-              </article>
-              
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Debugging in C#</h3>
-                  <a href="Assets/Certificates/DebuggingCSharp.jpg" target="_blank">Certificate</a>
-                </div>
-              </article>
-              
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Design Patterns</h3>
-                  <a href="Assets/Certificates/DesignPatterns.jpg" target="_blank">Certificate</a>
-                </div>
-              </article>
-              
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Version Control with Git</h3>
-                  <a href="Assets/Certificates/Git.jpg" target="_blank">Certificate</a>
-                </div>
-              </article>
-            </div>
-            <!-- <br>
-          Row2
-          <div class="article-container"> 
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Udemy Unity 2D</h3>
-                  <a href="Assets/Certificates/Udemy2DCert.pdf">Certificate</a>
-                </div>
-              </article>
-
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Advanced C#</h3>
-                  <a href="Assets/Certificates/AdvancedCSharp.jpg">Certificate</a>
-                </div>
-              </article>
-              
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Debugging in C#</h3>
-                  <a href="Assets/Certificates/DebuggingCSharp.jpg">Certificate</a>
-                </div>
-              </article>
-              
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Design Patterns</h3>
-                  <a href="Assets/Certificates/DesignPatterns.jpg">Certificate</a>
-                </div>
-              </article>
-              
-              <article>
-                <img src="Assets/Icons/checkmark1.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Version Control with Git</h3>
-                  <a href="Assets/Certificates/Git.jpg">Certificate</a>
-                </div>
-              </article>
-            </div> -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll Arrow -->
-      <img 
-        src="Assets/Icons/arrow1.png" 
-        alt="Arrow icon" 
-        class="icon arrow" 
-        onclick="location.href='./#contact'" />
-    </section>
-
-    <!-- ==================== CONTACT SECTION ==================== -->
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-
-      <div class="contact-info-upper-container">
-        <!-- Email Contact -->
-        <div class="contact-info-container">
-          <img 
-            src="Assets/Icons/email1.png" 
-            alt="Email icon" 
-            class="icon contact-icon email-icon" />
-          <p>
-            <a href="mailto:aiden.morgan6305@gmail.com">
-              aiden.morgan6305@gmail.com
-            </a>
-          </p>
-        </div>
-
-        <!-- LinkedIn Contact -->
-        <div class="contact-info-container">
-          <img 
-            src="Assets/Icons/linkedin1.png" 
-            alt="LinkedIn icon" 
-            class="icon contact-icon" />
-          <p>
-            <a href="https://www.linkedin.com/in/aiden-morgan-496535281/" target="_blank">
-              LinkedIn
-            </a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="btn-outline" href="Assets/Resumes/Resume%208-19-26.pdf" target="_blank" rel="noreferrer">Download Resume</a>
       </nav>
-      <p>Copyright &#169; 2024 Aiden Morgan. All Rights Reserved.</p>
-    </footer>
 
-    <!-- ==================== SCRIPTS ==================== -->
-    <script src="script.js"></script>
-  </body>
+      <div class="mobile-nav">
+        <button class="hamburger-icon" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="menu-links" role="menu">
+          <a href="#about" onclick="toggleMenu()">About</a>
+          <a href="#experience" onclick="toggleMenu()">Experience</a>
+          <a href="#projects" onclick="toggleMenu()">Projects</a>
+          <a href="#contact" onclick="toggleMenu()">Contact</a>
+          <a href="Assets/Resumes/Resume%208-19-26.pdf" target="_blank" rel="noreferrer" onclick="toggleMenu()">Download Resume</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="profile">
+        <div class="avatar-wrapper">
+          <div class="avatar">Sys.<br>Status:<br>Online</div>
+          <div class="status-indicator"></div>
+        </div>
+
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1>Aiden <span class="accent">Morgan</span></h1>
+        <p class="hero-subtitle">Software and Game Developer</p>
+        <p class="section-desc">Professionally I build software solutions, while in my free time I also develop small games centered on replayability and player enjoyment.</p>
+
+        <div class="tags-container">
+          <span class="tag">Unity</span>
+          <span class="tag">Unreal Engine</span>
+          <span class="tag">Godot</span>
+          <span class="tag">Maya</span>
+          <span class="tag">C#</span>
+          <span class="tag">C++</span>
+          <span class="tag">ASP.NET MVC</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="Assets/Resumes/Resume%208-19-26.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+          <a class="btn-outline" href="#contact">Contact Info</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/aiden-morgan-496535281/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+            <img src="Assets/Icons/linkedin1.png" alt="LinkedIn" class="social-icon">
+          </a>
+          <a href="https://github.com/aidenm6305" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+            <img src="Assets/Icons/github1.png" alt="GitHub" class="social-icon">
+          </a>
+        </div>
+      </section>
+
+      <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h2 class="title">About Me</h2>
+        <br>
+        <div class="section-container">
+          <div class="section__pic-container">
+            <img src="Assets/Portraits/editedprofile.jpg" alt="Portrait of Aiden Morgan" class="about-pic">
+          </div>
+
+          <div class="about-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+                <img src="Assets/Icons/experience1.png" alt="Experience icon" class="icon">
+                <h3>Experience</h3>
+                <p>3+ years<br>Game Development and Programming</p>
+              </div>
+
+              <div class="details-container">
+                <img src="Assets/Icons/education1.png" alt="Education icon" class="icon">
+                <h3>Education</h3>
+                <p>B.Sc. Computer Science<br>Certificate in Game Design</p>
+              </div>
+            </div>
+
+            <div class="text-container">
+              <p>Hello! I'm Aiden, a software and game developer. I currently build internal and external web solutions at Textron Aviation, but my sights are set on cooperative game systems. 
+                I’m driven by a simple belief: games are better with friends.
+              I’m looking to pivot my professional development experience into a career creating systems that bring people together.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <p class="section__text__p1">Explore My</p>
+        <h2 class="title">Experience</h2>
+
+        <div class="experience-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <h3 class="experience-sub-title">Frontend Development</h3>
+              <div class="article-container">
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>HTML</h3><p>Experienced</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>CSS</h3><p>Intermediate</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>JavaScript</h3><p>Intermediate</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Blazor</h3><p>Basic</p></div></article>
+              </div>
+            </div>
+
+            <div class="details-container">
+              <h3 class="experience-sub-title">Backend Development</h3>
+              <div class="article-container">
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>C++</h3><p>Intermediate</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>C#</h3><p>Experienced</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Python</h3><p>Basic</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>SQL</h3><p>Intermediate</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>ASP.NET MVC</h3><p>Experienced</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Git</h3><p>Experienced</p></div></article>
+              </div>
+            </div>
+
+            <div class="details-container">
+              <h3 class="experience-sub-title">Game Development</h3>
+              <div class="article-container">
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Unity</h3><p>Experienced</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Unreal</h3><p>Intermediate</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Godot</h3><p>Basic</p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Maya</h3><p>Intermediate</p></div></article>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-containers">
+            <div class="details-container">
+              <h3 class="experience-sub-title">Certificates</h3>
+              <div class="article-container">
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Udemy Unity 2D</h3><p><a href="Assets/Certificates/Udemy2DCert.pdf" target="_blank" rel="noreferrer">Certificate</a></p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Advanced C#</h3><p><a href="Assets/Certificates/AdvancedCSharp.jpg" target="_blank" rel="noreferrer">Certificate</a></p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Debugging in C#</h3><p><a href="Assets/Certificates/DebuggingCSharp.jpg" target="_blank" rel="noreferrer">Certificate</a></p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Design Patterns</h3><p><a href="Assets/Certificates/DesignPatterns.jpg" target="_blank" rel="noreferrer">Certificate</a></p></div></article>
+                <article><img src="Assets/Icons/checkmark1.png" alt="Checkmark" class="icon"><div><h3>Version Control with Git</h3><p><a href="Assets/Certificates/Git.jpg" target="_blank" rel="noreferrer">Certificate</a></p></div></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="title">Projects</h2>
+        <p class="section-desc">A group of all of my projects.</p>
+
+        <div class="project-controls">
+          <label for="project-sort">Sort by date</label>
+          <select id="project-sort" aria-label="Sort projects by date">
+            <option value="newest" selected>Newest to oldest</option>
+            <option value="oldest">Oldest to newest</option>
+          </select>
+
+          <label for="project-year">Year</label>
+          <select id="project-year" aria-label="Filter projects by year">
+            <option value="all" selected>All years</option>
+          </select>
+
+          <label for="project-favorite">Attribute</label>
+          <select id="project-favorite" aria-label="Filter projects by attribute">
+            <option value="all" selected>All projects</option>
+            <option value="favorite">Dev favorite only</option>
+          </select>
+
+          <div class="project-search">
+            <label for="project-search">Search</label>
+            <input id="project-search" type="search" placeholder="Search projects" aria-label="Search projects">
+          </div>
+        </div>
+
+        <div class="experience-details-container section-stack">
+          <div class="project-grid">
+            <div class="project-card" data-date="2026-06-20" data-year="2026" data-favorite="true">
+              <p>Jun 2026</p>
+              <span class="project-attribute">Dev favorite</span>
+              <img src="Assets/ProjectCovers/Tanks.jpeg" alt="Bad Tanks cover">
+              <h3 class="project-title">Bad Tanks</h3>
+              <p>A 3D split screen tank battle game.</p>
+              <small>3rd place winner of ICT Summer Jam</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/aidenm6305/Tanks3D" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://catourney.itch.io/bad-tanks" target="_blank" rel="noreferrer">Download</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-date="2026-06-01" data-year="2026" data-favorite="false">
+              <p>Jun 2026</p>
+              <img src="Assets/ProjectCovers/f1GvaU.png" alt="Saboteurs Speedway cover">
+              <h3 class="project-title">Saboteurs Speedway</h3>
+              <p>A 2D Topdown racing game.</p>
+              <small>Made in 48 hours</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/aidenm6305/RetroMicroJam" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://aidenm6305.itch.io/saboteursspeedway" target="_blank" rel="noreferrer">Play</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-date="2026-02-01" data-year="2026" data-favorite="true">
+              <p>Feb 2026</p>
+              <span class="project-attribute">Dev favorite</span>
+              <img src="Assets/ProjectCovers/ANSZLogInCropped.png" alt="ASNZ cover">
+              <h3 class="project-title">ASNZ</h3>
+              <p>A task management web application.</p>
+              <small>Made in 48 hours for the Hack the Wu Hackathon</small>
+              <div class="button-row"><a class="btn-primary" href="https://github.com/ZaneWallace20/HackTheWu-2026" target="_blank" rel="noreferrer">Github</a></div>
+            </div>
+
+            <div class="project-card" data-date="2026-02-01" data-year="2026" data-favorite="false">
+              <p>Feb 2026</p>
+              <img src="Assets/ProjectCovers/MasqueradePage.png" alt="Masquerade cover">
+              <h3 class="project-title">Masquerade</h3>
+              <p>A fast paced top down shooter with masked power ups and enemies.</p>
+              <small>Made in 48 hours for the Global Game Jam</small>
+              <div class="button-row"><a class="btn-primary" href="https://globalgamejam.org/games/2026/masquerade-6-1" target="_blank" rel="noreferrer">Game Jam Page</a></div>
+            </div>
+
+            <div class="project-card" data-date="2025-11-01" data-year="2025" data-favorite="true">
+              <p>Nov 2025</p>
+              <span class="project-attribute">Dev favorite</span>
+              <img src="Assets/ProjectCovers/MAZEIcon.png" alt="Flux cover">
+              <h3 class="project-title">Flux</h3>
+              <p>A 3D ever changing maze game.</p>
+              <small>Showcased at Midwest Developers Conference</small>
+              <div class="button-row"><a class="btn-primary" href="https://aidenm6305.itch.io/flux-prototype" target="_blank" rel="noreferrer">Download Prototype</a></div>
+            </div>
+
+            <div class="project-card" data-date="2025-01-01" data-year="2025" data-favorite="false">
+              <p>Jan 2025</p>
+              <img src="Assets/ProjectCovers/Temple.PNG" alt="Temple Trials cover">
+              <h3 class="project-title">Temple Trials</h3>
+              <p>A 3D puzzle game set in an ancient temple.</p>
+              <small>Made in 48 hours</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/aidenm6305/MicroJam-Ancient" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://aidenm6305.itch.io/temple-trials" target="_blank" rel="noreferrer">Download</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-date="2024-11-01" data-year="2024" data-favorite="false">
+              <p>Nov 2024</p>
+              <img src="Assets/ProjectCovers/coverRedacted.png" alt="Redacted cover">
+              <h3 class="project-title">Redacted</h3>
+              <p>A memory game where you create your own alibi.</p>
+              <small>WULUG Game Jam Winner</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/ZaneWallace20/Game_Jam" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://aidenm6305.itch.io/redacted" target="_blank" rel="noreferrer">Download</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-date="2022-12-01" data-year="2022" data-favorite="false">
+              <p>Dec 2022</p>
+              <img src="Assets/ProjectCovers/rocket.PNG" alt="Galactic Trials cover">
+              <h3 class="project-title">Galactic Trials</h3>
+              <p>A 3D physics based space shuttle flight challenge.</p>
+              <small>First ever project</small>
+              <div class="button-row">
+                <a class="btn-primary" href="https://github.com/aidenm6305/Galactic-Trials" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn-outline" href="https://aidenm6305.itch.io/galactic-trials" target="_blank" rel="noreferrer">Download</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h2 class="title">Contact Me</h2>
+        <br>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <img src="Assets/Icons/email1.png" alt="Email icon" class="icon contact-icon">
+            <p><a href="mailto:aiden.morgan6305@gmail.com">aiden.morgan6305@gmail.com</a></p>
+          </div>
+
+          <div class="contact-card">
+            <img src="Assets/Icons/linkedin1.png" alt="LinkedIn icon" class="icon contact-icon">
+            <p><a href="https://www.linkedin.com/in/aiden-morgan-496535281/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p>Copyright &#169; 2024-2026 Aiden Morgan. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
 </html>
